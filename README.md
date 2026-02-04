@@ -1,78 +1,100 @@
-# [Nombre de la Aplicación]
+# ReMarket
 
 ## 👥 Miembros del Equipo
 | Nombre y Apellidos | Correo URJC | Usuario GitHub |
 |:--- |:--- |:--- |
-| [Nombre 1] | [email1]@alumnos.urjc.es | [User1] |
-| [Nombre 2] | [email2]@alumnos.urjc.es | [User2] |
-| [Nombre 3] | [email3]@alumnos.urjc.es | [User3] |
-| [Nombre 4] | [email4]@alumnos.urjc.es | [User4] |
+| Carlos Morillas López | c.morillas.2019@alumnos.urjc.es | Carlossml100 |
 
 ---
 
 ## 🎭 **Preparación 1: Definición del Proyecto**
 
 ### **Descripción del Tema**
-[Escribe aquí una descripción breve y concisa de qué trata tu aplicación, el sector al que pertenece y qué valor aporta al usuario].
+La aplicación consiste en una plataforma web de compra y venta de productos usados, dirigida a usuarios que desean vender artículos que ya no utilizan o adquirir productos a un menor precio. Pertenece al sector del comercio digital y aporta valor al usuario al ofrecer una alternativa económica, accesible y sostenible frente a la compra de productos nuevos.
 
 ### **Entidades**
-Indicar las entidades principales que gestionará la aplicación y las relaciones entre ellas:
 
-1. **[Entidad 1]**: [Ej: Usuario]
-2. **[Entidad 2]**: [Ej: Producto]
-3. **[Entidad 3]**: [Ej: Pedido]
-4. **[Entidad 4]**: [Ej: Categoría]
+1. **[Entidad 1]**: Usuario
+   - Representa a las personas que utilizan la aplicación. Un usuario puede registrarse, iniciar sesión, publicar productos en venta y comprar productos de otros usuarios.
+3. **[Entidad 2]**: Producto
+   - Corresponde a los artículos de segunda mano que se publican en la plataforma. Cada producto pertenece a un único usuario vendedor y contiene información como título, descripción, precio, estado y categoría.
+5. **[Entidad 3]**: Compra
+   - Representa la transacción realizada cuando un usuario adquiere un producto. Relaciona a un usuario comprador con un producto concreto, almacenando información como la fecha de la compra y su estado.
 
 **Relaciones entre entidades:**
-- [Ej: Usuario - Pedido: Un usuario puede tener múltiples pedidos (1:N)]
-- [Ej: Pedido - Producto: Un pedido puede contener múltiples productos y un producto puede estar en múltiples pedidos (N:M)]
-- [Ej: Producto - Categoría: Un producto pertenece a una categoría (N:1)]
-- [Descripción de otras relaciones relevantes]
+- Un Usuario puede publicar uno o varios Productos.
+- Un Usuario puede realizar una o varias Compras.
+- Cada Compra está asociada a un único Producto.
+- Un Producto solo puede estar asociado a una Compra o a ninguna si aún no ha sido vendido.
 
 ### **Permisos de los Usuarios**
-Describir los permisos de cada tipo de usuario e indicar de qué entidades es dueño:
 
 * **Usuario Anónimo**: 
-  - Permisos: [Ej: Visualización de catálogo, búsqueda de productos, registro]
+  - Permisos:
+    >Visualización del listado de productos disponibles
+    > Búsqueda y filtrado de productos
+    >Visualización del detalle de un producto
+    >Registro en la aplicación
+    
   - No es dueño de ninguna entidad
 
 * **Usuario Registrado**: 
-  - Permisos: [Ej: Gestión de perfil, realizar pedidos, crear valoraciones]
-  - Es dueño de: [Ej: Sus propios Pedidos, su Perfil de Usuario, sus Valoraciones]
+  - Permisos:
+    >Gestión de su perfil de usuario
+    >Publicación, edición y eliminación de sus propios productos
+    >Compra de productos publicados por otros usuarios
+    >Visualización del estado de sus compras
+    
+  - Es dueño de:
+    > Su Perfil de Usuario
+    > Sus Productos publicados
+    > Sus Compras realizadas
 
 * **Administrador**: 
-  - Permisos: [Ej: Gestión completa de productos (CRUD), visualización de estadísticas, moderación de contenido]
-  - Es dueño de: [Ej: Productos, Categorías, puede gestionar todos los Pedidos y Usuarios]
+  - Permisos:
+    >Gestión completa de usuarios (alta, baja, edición y bloqueo)
+    >Moderación y gestión de todos los productos publicados
+    >Visualización y gestión de todas las compras realizadas
+    >Supervisión general del funcionamiento de la aplicación
+    >
+  - Es dueño de:
+    >Puede gestionar todas las entidades del sistema (Usuarios, Productos y Compras)
 
 ### **Imágenes**
-Indicar qué entidades tendrán asociadas una o varias imágenes:
 
-- **[Entidad con imágenes 1]**: [Ej: Usuario - Una imagen de avatar por usuario]
-- **[Entidad con imágenes 2]**: [Ej: Producto - Múltiples imágenes por producto (galería)]
-- **[Entidad con imágenes 3]**: [Ej: Categoría - Una imagen representativa por categoría]
+- **Usuario**: Una imagen de perfil o avatar asociada a cada usuario registrado.
+- **Producto**: Una o varias imágenes por producto, que permiten mostrar el estado y características del artículo (galería de imágenes).
 
 ### **Gráficos**
-Indicar qué información se mostrará usando gráficos y de qué tipo serán:
 
-- **Gráfico 1**: [Ej: Ventas mensuales - Gráfico de barras]
-- **Gráfico 2**: [Ej: Productos más vendidos - Gráfico de tarta/circular]
-- **Gráfico 3**: [Ej: Evolución de usuarios registrados - Gráfico de líneas]
-- **Gráfico 4**: [Ej: Distribución de pedidos por categoría - Gráfico de barras horizontales]
+- **Gráfico 1**: Número de compras por mes – Gráfico de barras:
+      > Muestra la cantidad de compras realizadas en la plataforma cada mes, permitiendo analizar la actividad general de la aplicación.
+- **Gráfico 2**: Productos vendidos vs productos disponibles – Gráfico circular
+      > Permite visualizar la proporción entre productos ya vendidos y productos que aún están en venta.
+- **Gráfico 3**: Evolución de usuarios registrados – Gráfico de líneas
+      > Representa el crecimiento del número de usuarios registrados a lo largo del tiempo.
+- **Gráfico 4**: Distribución de compras por categoría de producto – Gráfico de barras horizontales
+      > Muestra qué tipo de productos se compran con mayor frecuencia, basándose en la categoría asociada a cada producto.
 
 ### **Tecnología Complementaria**
-Indicar qué tecnología complementaria se empleará:
 
-- [Ej: Envío de correos electrónicos automáticos mediante JavaMailSender]
-- [Ej: Generación de PDFs de facturas usando iText o similar]
-- [Ej: Sistema de autenticación OAuth2 o JWT]
-- [Otras tecnologías externas que se integrarán]
+- Sistema de autenticación y autorización:
+    > Uso de autenticación basada en usuarios y contraseñas, con control de roles (usuario registrado y administrador). Opcionalmente se podrá emplear JWT para la gestión de sesiones 
+      de forma segura.
+- Envío de correos electrónicos automáticos:
+    > Envío de correos electrónicos para acciones como registro de usuario, confirmación de compra o notificaciones básicas, utilizando un servicio de correo SMTP o una librería 
+      equivalente.
+- Almacenamiento y gestión de imágenes:
+    > Uso de un sistema de almacenamiento para las imágenes de perfil de usuario y las imágenes de productos, permitiendo su subida, visualización y eliminación.
+- Validación de datos en formularios:
+    > Implementación de validaciones tanto en el lado del cliente como en el servidor para asegurar la integridad y seguridad de los datos introducidos por los usuarios.
 
 ### **Algoritmo o Consulta Avanzada**
-Indicar cuál será el algoritmo o consulta avanzada que se implementará:
 
-- **Algoritmo/Consulta**: [Ej: Sistema de recomendaciones basado en el historial de compras del usuario]
-- **Descripción**: [Ej: Analiza los productos comprados previamente y sugiere productos similares o complementarios utilizando filtrado colaborativo]
-- **Alternativa**: [Ej: Consulta compleja que agrupe ventas por categoría, mes y región, con cálculo de tendencias]
+- **Algoritmo/Consulta**: Búsqueda avanzada de productos con filtros.
+- **Descripción**: La aplicación permitirá realizar una consulta avanzada sobre Producto aplicando filtros y devolviendo los resultados acaptados a los filtros establecidos
+- **Alternativa**: Estadísticas de compras por mes y categoría (consulta agregada):
+       > Consulta que agrupa las Compras por mes y por categoría del Producto, devolviendo el número total de compras y el importe total.
 
 ---
 
