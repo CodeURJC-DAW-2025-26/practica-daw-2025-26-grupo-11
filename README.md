@@ -79,9 +79,8 @@ La aplicación consiste en una plataforma web de compra y venta de productos usa
 ### **Tecnología Complementaria**
 
 -Envío de correos electrónicos automáticos
-   >Envío de email al usuario en eventos como registro, confirmación de compra y cambios de estado de compra (ej. “confirmada”, “cancelada”), usando un servicio SMTP/librería de correo.
-
-- Generación de PDF del comprobante de compra
+ >Envío de email al usuario en eventos como registro, confirmación de compra y cambios de estado de compra (ej. “confirmada”, “cancelada”), usando un servicio SMTP/librería de correo.
+-Generación de PDF del comprobante de compra
    >Generación automática de un PDF con los datos de la compra (comprador, producto, vendedor, precio, fecha y código/ID de compra) para que el usuario pueda descargarlo como      justificante. Se puede generar al confirmar la compra o desde el historial de compras.
 
 ### **Algoritmo o Consulta Avanzada**
