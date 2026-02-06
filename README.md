@@ -78,23 +78,20 @@ La aplicación consiste en una plataforma web de compra y venta de productos usa
 
 ### **Tecnología Complementaria**
 
-- Sistema de autenticación y autorización:
-    > Uso de autenticación basada en usuarios y contraseñas, con control de roles (usuario registrado y administrador). Opcionalmente se podrá emplear JWT para la gestión de sesiones 
-      de forma segura.
-- Envío de correos electrónicos automáticos:
-    > Envío de correos electrónicos para acciones como registro de usuario, confirmación de compra o notificaciones básicas, utilizando un servicio de correo SMTP o una librería 
-      equivalente.
-- Almacenamiento y gestión de imágenes:
-    > Uso de un sistema de almacenamiento para las imágenes de perfil de usuario y las imágenes de productos, permitiendo su subida, visualización y eliminación.
-- Validación de datos en formularios:
-    > Implementación de validaciones tanto en el lado del cliente como en el servidor para asegurar la integridad y seguridad de los datos introducidos por los usuarios.
+-Envío de correos electrónicos automáticos
+   >Envío de email al usuario en eventos como registro, confirmación de compra y cambios de estado de compra (ej. “confirmada”, “cancelada”), usando un servicio SMTP/librería de correo.
+
+- Generación de PDF del comprobante de compra
+   >Generación automática de un PDF con los datos de la compra (comprador, producto, vendedor, precio, fecha y código/ID de compra) para que el usuario pueda descargarlo como      justificante. Se puede generar al confirmar la compra o desde el historial de compras.
 
 ### **Algoritmo o Consulta Avanzada**
 
-- **Algoritmo/Consulta**: Búsqueda avanzada de productos con filtros.
-- **Descripción**: La aplicación permitirá realizar una consulta avanzada sobre Producto aplicando filtros y devolviendo los resultados acaptados a los filtros establecidos
-- **Alternativa**: Estadísticas de compras por mes y categoría (consulta agregada):
-       > Consulta que agrupa las Compras por mes y por categoría del Producto, devolviendo el número total de compras y el importe total.
+- **Algoritmo/Consulta**: Ranking de vendedores (Top vendedores) por número de ventas e ingresos
+- **Descripción**: Se implementará una consulta que calcule un ranking de usuarios vendedores, mostrando para cada vendedor:
+         >Total de ventas realizadas (nº de compras de sus productos)
+         >Ingresos totales generados (suma del precio de los productos vendidos).Para ello se realiza un JOIN entre Usuario, Producto y Compra, agrupando por vendedor. Esta    información será útil para el panel de administrador y para estadísticas de la plataforma.
+- **Alternativa**:Historial de compras de un usuario con detalle del producto y del vendedor
+   >Consulta que, para un usuario comprador, devuelve su historial mostrando: datos de la compra + nombre del producto + precio + vendedor. Requiere JOIN entre Compra–Producto–Usuario.
 
 ---
 
